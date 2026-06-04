@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>LuxeShop 精品代購</title>
+<meta name="theme-color" content="#faf8f5">
+<meta name="description" content="LuxeShop 精品代購 — 嚴選 LV、Chanel、Hermès、Dior 等精品，正品保證，手機即可瀏覽下單。">
+<style>
+:root{color-scheme:light;--bg:#faf8f5;--card:#fff;--ink:#1a1a1a;--muted:#6b6b6b;--gold:#b08d57;--line:#ece7df;--red:#b23a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Helvetica Neue",Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+header.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
+.bar{max-width:1100px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;gap:12px}
+.brand{font-family:Georgia,serif;font-size:22px;letter-spacing:3px;font-weight:600;cursor:pointer}
+.brand small{display:block;font-size:10px;letter-spacing:4px;color:var(--gold);font-family:Arial}
+.wrap{max-width:1100px;margin:0 auto;padding:18px}
+.hero{padding:26px 4px 8px}
+.hero h1{font-family:Georgia,serif;font-size:26px;margin:0 0 4px}
+.hero p{margin:0;color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
+@media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr);gap:20px}}
+@media(min-width:980px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s;cursor:pointer}
+.card:active{transform:scale(.98)}
+@media(hover:hover){.card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.08)}}
+.thumb{position:relative;aspect-ratio:1/1;background:#eee}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.tags{position:absolute;top:8px;left:8px;display:flex;gap:6px}
+.tag{font-size:10px;font-weight:700;letter-spacing:1px;padding:3px 7px;border-radius:20px;color:#fff}
+.tag.new{background:var(--gold)}.tag.hot{background:var(--red)}
+.info{padding:11px 12px 14px;display:flex;flex-direction:column;gap:3px;flex:1}
+.bn{font-size:11px;letter-spacing:1px;color:var(--gold);text-transform:uppercase}
+.nm{font-size:14px;font-weight:600;line-height:1.35;min-height:38px}
+.pr{margin-top:6px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.sale{font-size:16px;font-weight:700}
+.orig{font-size:12px;color:var(--muted);text-decoration:line-through}
+.off{font-size:11px;color:var(--red);font-weight:700}
+.detail{display:grid;grid-template-columns:1fr;gap:22px;margin-top:8px}
+@media(min-width:760px){.detail{grid-template-columns:1fr 1fr;gap:36px;align-items:start}}
+.detail .ph{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#eee}
+.detail .ph img{width:100%;display:block}
+.dt h1{font-family:Georgia,serif;font-size:24px;margin:6px 0 2px}
+.kv{margin:14px 0;border-top:1px solid var(--line)}
+.kv div{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
+.kv span:first-child{color:var(--muted)}
+.buy{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+.btn{flex:1;min-width:140px;text-align:center;padding:13px 18px;border-radius:30px;font-weight:700;font-size:15px;cursor:pointer;border:none}
+.btn.primary{background:var(--ink);color:#fff}.btn.ghost{border:1px solid var(--ink);background:transparent}
+.back{display:inline-block;margin:4px 0 10px;color:var(--muted);font-size:14px;cursor:pointer}
+.stockline{font-size:13px;color:var(--muted);margin-top:6px}
+.lowstock{color:var(--red);font-weight:600}
+.bigprice{font-size:26px;font-weight:800;margin-top:10px}
+footer{max-width:1100px;margin:30px auto 50px;padding:18px;color:var(--muted);font-size:12px;text-align:center;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<header class="top"><div class="bar">
+<a class="brand" href="#/">LUXESHOP<small>精品代購</small></a>
+</div></header>
+<main id="app"><div class="wrap"><p style="color:var(--muted)">載入中…</p></div></main>
+<footer>LuxeShop 精品代購 · 本站為示範用途，價格與庫存僅供參考<br>© <span id="yr"></span> LuxeShop</footer>
+<script>
+var PRODUCTS = [{"sku":"LV-NEV-MM-001","name":"Louis Vuitton Neverfull MM","salePrice":78000,"originalPrice":80000,"stock":5,"brandName":"Louis Vuitton","categoryName":"手提包","shortDescription":"經典 Monogram 帆布製作，是 LV 最受歡迎的款式之一","status":"PUBLISHED","isNew":true,"isHot":false,"metaTitle":"Louis Vuitton Neverfull MM | LuxeShop 精品代購"},{"sku":"LV-OTG-PM-002","name":"Louis Vuitton OnTheGo PM","salePrice":98000,"originalPrice":102000,"stock":3,"brandName":"Louis Vuitton","categoryName":"手提包","shortDescription":"雙面 Monogram 與反轉印花，通勤與外出皆宜的人氣托特包","status":"PUBLISHED","isNew":true,"isHot":true,"metaTitle":"Louis Vuitton OnTheGo PM | LuxeShop 精品代購"},{"sku":"CH-CF-MED-003","name":"Chanel Classic Flap Medium","salePrice":295000,"originalPrice":310000,"stock":2,"brandName":"Chanel","categoryName":"肩背包","shortDescription":"菱格紋小羊皮與雙 C 翻蓋扣，永恆經典的投資款","status":"PUBLISHED","isNew":false,"isHot":true,"metaTitle":"Chanel Classic Flap Medium | LuxeShop 精品代購"},{"sku":"CH-WOC-004","name":"Chanel Wallet on Chain","salePrice":138000,"originalPrice":145000,"stock":4,"brandName":"Chanel","categoryName":"鏈帶包","shortDescription":"小巧鏈帶包，可放卡片與手機，日常斜背首選","status":"PUBLISHED","isNew":true,"isHot":false,"metaTitle":"Chanel WOC 鏈帶包 | LuxeShop 精品代購"},{"sku":"HM-BIRKIN-25-005","name":"Hermès Birkin 25","salePrice":650000,"originalPrice":680000,"stock":1,"brandName":"Hermès","categoryName":"手提包","shortDescription":"Togo 皮革與金扣，稀有現貨，精品收藏家夢幻逸品","status":"PUBLISHED","isNew":false,"isHot":true,"metaTitle":"Hermès Birkin 25 | LuxeShop 精品代購"},{"sku":"HM-KELLY-28-006","name":"Hermès Kelly 28","salePrice":720000,"originalPrice":750000,"stock":1,"brandName":"Hermès","categoryName":"手提包","shortDescription":"Epsom 皮革與經典鎖釦，優雅與保值兼具的傳奇包款","status":"PUBLISHED","isNew":false,"isHot":true,"metaTitle":"Hermès Kelly 28 | LuxeShop 精品代購"},{"sku":"GU-MARMONT-007","name":"Gucci GG Marmont Small","salePrice":62000,"originalPrice":66000,"stock":6,"brandName":"Gucci","categoryName":"肩背包","shortDescription":"絎縫雪佛龍紋與復古雙 G 釦，時髦百搭的入門精品","status":"PUBLISHED","isNew":true,"isHot":false,"metaTitle":"Gucci GG Marmont Small | LuxeShop 精品代購"},{"sku":"DI-LADY-MED-008","name":"Dior Lady Dior Medium","salePrice":178000,"originalPrice":188000,"stock":2,"brandName":"Dior","categoryName":"手提包","shortDescription":"藤格紋小羊皮與 D.I.O.R 吊飾，優雅法式經典","status":"PUBLISHED","isNew":false,"isHot":true,"metaTitle":"Dior Lady Dior Medium | LuxeShop 精品代購"},{"sku":"PR-GALLERIA-009","name":"Prada Galleria Saffiano","salePrice":89000,"originalPrice":95000,"stock":4,"brandName":"Prada","categoryName":"手提包","shortDescription":"防刮 Saffiano 牛皮與三角標誌，幹練俐落的通勤包","status":"PUBLISHED","isNew":true,"isHot":false,"metaTitle":"Prada Galleria | LuxeShop 精品代購"},{"sku":"BV-JODIE-MINI-010","name":"Bottega Veneta Mini Jodie","salePrice":118000,"originalPrice":125000,"stock":3,"brandName":"Bottega Veneta","categoryName":"肩背包","shortDescription":"標誌性 Intrecciato 編織與結飾提把，柔軟摩登","status":"PUBLISHED","isNew":true,"isHot":true,"metaTitle":"Bottega Veneta Mini Jodie | LuxeShop 精品代購"},{"sku":"CE-LUGGAGE-011","name":"Celine Nano Luggage","salePrice":98000,"originalPrice":105000,"stock":2,"brandName":"Celine","categoryName":"手提包","shortDescription":"經典微笑廓形與撞色設計，辨識度極高的人氣款","status":"PUBLISHED","isNew":false,"isHot":false,"metaTitle":"Celine Nano Luggage | LuxeShop 精品代購"},{"sku":"SL-LOULOU-012","name":"Saint Laurent LouLou Medium","salePrice":86000,"originalPrice":92000,"stock":5,"brandName":"Saint Laurent","categoryName":"肩背包","shortDescription":"絎縫 Y 字車線與金屬 YSL 標誌，浪漫又率性","status":"PUBLISHED","isNew":true,"isHot":false,"metaTitle":"Saint Laurent LouLou | LuxeShop 精品代購"}];
+document.getElementById('yr').textContent = new Date().getFullYear();
+function ntd(n){return 'NT$ ' + Number(n).toLocaleString('en-US');}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function discount(p){if(!p.originalPrice||p.originalPrice<=p.salePrice)return 0;return Math.round((1-p.salePrice/p.originalPrice)*100);}
+var PAL={'Louis Vuitton':['#4a2c14','#8b5e34'],'Chanel':['#111','#444'],'Hermès':['#d4761a','#f4a14e'],'Gucci':['#1d4d2b','#2e7d46'],'Dior':['#5b5b5b','#9a9a9a'],'Prada':['#1a1a2e','#3d3d6b'],'Bottega Veneta':['#2f5e3a','#4a8c5d'],'Celine':['#7a2c2c','#a84b4b'],'Saint Laurent':['#1a1a1a','#555']};
+function svg(p){var c=PAL[p.brandName]||['#2c2c2c','#5a5a5a'];var ini=esc(p.brandName.split(' ').map(function(w){return w[0]}).join('').slice(0,3).toUpperCase());
+return 'data:image/svg+xml;utf8,'+encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='"+c[0]+"'/><stop offset='1' stop-color='"+c[1]+"'/></linearGradient></defs><rect width='400' height='400' fill='url(#g)'/><text x='200' y='215' font-family='Georgia,serif' font-size='66' fill='#fff' text-anchor='middle' letter-spacing='4' opacity='0.92'>"+ini+"</text><text x='200' y='300' font-family='Helvetica,Arial,sans-serif' font-size='20' fill='#fff' text-anchor='middle' opacity='0.7' letter-spacing='3'>LUXESHOP</text></svg>");}
+function card(p){var off=discount(p);var tags=(p.isNew?'<span class="tag new">NEW</span>':'')+(p.isHot?'<span class="tag hot">HOT</span>':'');
+return '<a class="card" href="#/product/'+encodeURIComponent(p.sku)+'"><div class="thumb"><img loading="lazy" src="'+svg(p)+'" alt="'+esc(p.name)+'"><div class="tags">'+tags+'</div></div><div class="info"><div class="bn">'+esc(p.brandName)+'</div><div class="nm">'+esc(p.name)+'</div><div class="pr"><span class="sale">'+ntd(p.salePrice)+'</span>'+(off?'<span class="orig">'+ntd(p.originalPrice)+'</span><span class="off">-'+off+'%</span>':'')+'</div></div></a>';}
+function renderHome(){var grid=PRODUCTS.map(card).join('');
+return '<div class="wrap"><div class="hero"><h1>嚴選精品 · 全球代購</h1><p>共 '+PRODUCTS.length+' 款現貨，正品保證，手機下單即時為您服務。</p></div><div class="grid">'+grid+'</div></div>';}
+function renderProduct(sku){var p=null;for(var i=0;i<PRODUCTS.length;i++){if(PRODUCTS[i].sku===sku){p=PRODUCTS[i];break;}}
+if(!p)return '<div class="wrap"><p>找不到此商品。</p><a class="back" href="#/">← 返回商品總覽</a></div>';
+var off=discount(p);var low=p.stock>0&&p.stock<=3;
+return '<div class="wrap"><a class="back" href="#/">← 返回商品總覽</a><div class="detail"><div class="ph"><img src="'+svg(p)+'" alt="'+esc(p.name)+'"></div><div class="dt"><div class="bn">'+esc(p.brandName)+'</div><h1>'+esc(p.name)+'</h1><p style="color:var(--muted);margin:6px 0 0">'+esc(p.shortDescription)+'</p><div class="bigprice">'+ntd(p.salePrice)+(off?' <span class="orig" style="font-size:15px;margin-left:8px">'+ntd(p.originalPrice)+'</span> <span class="off">-'+off+'%</span>':'')+'</div><div class="stockline '+(low?'lowstock':'')+'">'+(p.stock>0?(low?'僅剩 '+p.stock+' 件，欲購從速':'現貨 '+p.stock+' 件'):'暫時缺貨')+'</div><div class="kv"><div><span>品牌</span><span>'+esc(p.brandName)+'</span></div><div><span>分類</span><span>'+esc(p.categoryName)+'</span></div><div><span>商品編號</span><span>'+esc(p.sku)+'</span></div><div><span>狀態</span><span>'+esc(p.status)+'</span></div></div><div class="buy"><a class="btn primary">加入購物車</a><a class="btn ghost" href="#/">繼續選購</a></div></div></div></div>';}
+function router(){var h=location.hash||'#/';var m=h.match(/^#\/product\/(.+)$/);var app=document.getElementById('app');
+if(m){app.innerHTML=renderProduct(decodeURIComponent(m[1]));var p=null;for(var i=0;i<PRODUCTS.length;i++){if(PRODUCTS[i].sku===decodeURIComponent(m[1])){p=PRODUCTS[i];break;}}document.title=(p&&p.metaTitle)?p.metaTitle:'LuxeShop 精品代購';}
+else{app.innerHTML=renderHome();document.title='LuxeShop 精品代購 · 商品總覽';}
+window.scrollTo(0,0);}
+window.addEventListener('hashchange',router);router();
+</script>
+</body>
+</html>
